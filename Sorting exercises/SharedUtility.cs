@@ -8,14 +8,17 @@ namespace Sorting_exercises
 {
     public static class SharedUtility
     {
-        public static void WriteArrayToConsole(int[] arr)
+        public static int[] CreateRandomArray(int size)
         {
-            Console.Write($"[ ");
-            foreach (var item in arr)
+            var array = new int[size];
+            var rand = new Random();
+
+            for (int i = 0; i < size; i++)
             {
-                Console.Write($"{item}, ");
+                array[i] = rand.Next(-100, 100);
             }
-            Console.Write($" ]");
+
+            return array;
         }
     }
 }

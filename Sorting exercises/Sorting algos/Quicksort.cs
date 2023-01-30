@@ -6,30 +6,31 @@ using System.Threading.Tasks;
 
 namespace Sorting_exercises.Sorting_algos
 {
-    public class Quicksort
+    public class Quicksort : ISorters
     {
+        private readonly int[] numbers;
+
+
         /// <summary>
         /// My implementation of the quicksort algorithm
         /// Best case scenario: O(n log(n))
         /// Average scenario: O(n log(n))
         /// Worst case scenario: O(n^2)
         /// </summary>
-        /// <param name="numbers"></param>
-        public Quicksort()
+        public Quicksort(int[] numbersToBeSorted)
         {
-
+            numbers = numbersToBeSorted;
         }
 
-        public void Sort(int[] numbers)
+        public void Sort()
         {
-            //TODO
-            //implement the quicksort
-            Console.WriteLine("Before Quicksort");
-            SharedUtility.WriteArrayToConsole(numbers);
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            watch.Start();
             QuickSorting(numbers, 0, numbers.Length - 1);
-            Console.WriteLine("\nAfter Quicksort");
-            SharedUtility.WriteArrayToConsole(numbers);
-
+            watch.Stop();
+            Console.WriteLine("Quicksort");
+            numbers.WriteArrayToConsole();
+            Console.WriteLine($"Sorting time: {watch.Elapsed.TotalMilliseconds} ms.\n");
         }
 
         private int Partition(int[] numbers, int low, int high)
@@ -43,10 +44,10 @@ namespace Sorting_exercises.Sorting_algos
                 if (numbers[j] < pivot)
                 {
                     i++;
-                    Swap(numbers, i, j);
+                    numbers.Swap(i, j);
                 }
             }
-            Swap(numbers, i + 1, high);
+            numbers.Swap(i + 1, high);
             return (i + 1);
         }
 
@@ -60,14 +61,5 @@ namespace Sorting_exercises.Sorting_algos
                 QuickSorting(numbers, pi + 1, high);
             }
         }
-
-        private void Swap(int[] numbers, int x, int y)
-        {
-            int temp = numbers[x];
-            numbers[x] = numbers[y];
-            numbers[y] = temp;
-        }
-
-
     }
 }
