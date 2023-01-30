@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sorting_exercises.Interfaces;
 
 namespace Sorting_exercises.Sorting_algos
 {
-    public class Quicksort : ISorters
+    public class QuickSort : ISorter
     {
         private readonly int[] numbers;
 
@@ -17,7 +18,7 @@ namespace Sorting_exercises.Sorting_algos
         /// Average scenario: O(n log(n))
         /// Worst case scenario: O(n^2)
         /// </summary>
-        public Quicksort(int[] numbersToBeSorted)
+        public QuickSort(int[] numbersToBeSorted)
         {
             numbers = numbersToBeSorted;
         }
@@ -28,7 +29,7 @@ namespace Sorting_exercises.Sorting_algos
             watch.Start();
             QuickSorting(numbers, 0, numbers.Length - 1);
             watch.Stop();
-            Console.WriteLine("Quicksort");
+            Console.WriteLine("Quick Sort");
             numbers.WriteArrayToConsole();
             Console.WriteLine($"Sorting time: {watch.Elapsed.TotalMilliseconds} ms.\n");
         }

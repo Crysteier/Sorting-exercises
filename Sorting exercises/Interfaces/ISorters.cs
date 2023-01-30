@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sorting_exercises.Sorting_algos
+namespace Sorting_exercises.Interfaces
 {
-    internal interface ISorters
+    internal interface ISorter
     {
         public void Sort();
     }

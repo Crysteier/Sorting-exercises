@@ -7,10 +7,12 @@ Console.WriteLine("I will be sorting this array: ");
 sortThis.WriteArrayToConsole();
 Console.WriteLine();
 
-var quicksort = new Quicksort((int[])sortThis.Clone());
-var selectionsort = new SelectionSort((int[])sortThis.Clone());
-var bubblesort = new BubbleSort((int[])sortThis.Clone());
+var quickSort = new QuickSort((int[])sortThis.Clone());
+var selectionSort = new SelectionSort((int[])sortThis.Clone());
+var bubbleSort = new BubbleSort((int[])sortThis.Clone());
+var insertionSort = new InsertionSort((int[])sortThis.Clone());
 
-quicksort.Sort();
-selectionsort.Sort();
-bubblesort.Sort();
+quickSort.Sort();
+selectionSort.Sort();
+bubbleSort.Sort();
+insertionSort.Sort();

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sorting_exercises.Interfaces;
 
 namespace Sorting_exercises.Sorting_algos
 {
-    public class SelectionSort : ISorters
+    public class SelectionSort : ISorter
     {
         private int[] numbers;
 
