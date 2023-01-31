@@ -11,8 +11,10 @@ var quickSort = new QuickSort((int[])sortThis.Clone());
 var selectionSort = new SelectionSort((int[])sortThis.Clone());
 var bubbleSort = new BubbleSort((int[])sortThis.Clone());
 var insertionSort = new InsertionSort((int[])sortThis.Clone());
+var mergeSort = new MergeSort((int[])sortThis.Clone());
 
 quickSort.Sort();
 selectionSort.Sort();
 bubbleSort.Sort();
 insertionSort.Sort();
+mergeSort.Sort();

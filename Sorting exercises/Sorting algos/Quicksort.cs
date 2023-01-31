@@ -18,6 +18,7 @@ namespace Sorting_exercises.Sorting_algos
         /// Average scenario: O(n log(n))
         /// Worst case scenario: O(n^2)
         /// </summary>
+        /// <param name="numbersToBeSorted"></param>
         public QuickSort(int[] numbersToBeSorted)
         {
             numbers = numbersToBeSorted;
